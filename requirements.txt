@@ -1,0 +1,8 @@
+zhipuai
+dashscope
+openai-whisper
+tqdm
+pydantic
+python-dotenv
+openai
+jupyterlab
