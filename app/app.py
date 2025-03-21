@@ -22,16 +22,21 @@ def project_page(project):
     st.header(f"Open MEMO")
 
     with st.form("项目名称", clear_on_submit=False):
-        col1, col2, col3 = st.columns([5, 1, 1])
+        col1, col2 , _= st.columns([3, 3,4])
+        col3, col4, _ = st.columns([1, 1, 7])
+
         with col1:
             new_name = st.text_input(
-                "项目名称", project['name'], label_visibility="collapsed")
+                "项目名称", project['name'])
         with col2:
-            save_name = st.form_submit_button("修改名称", use_container_width=True)
+            person_name = st.text_input(
+                "讲述人", project['person_name'])
         with col3:
+            save_name = st.form_submit_button("修改", use_container_width=True)
+        with col4:
             delete_project = st.form_submit_button("删除项目", use_container_width=True)
-        if save_name and new_name != project['name']:
-            update_project_name(project, new_name)
+        if save_name:
+            update_project_name(project, new_name, person_name)
             st.session_state.current_project = project
             st.session_state.projects = load_projects()
             st.rerun()

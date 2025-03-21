@@ -106,12 +106,13 @@ def create_project(project_name, person_name):
     }
     return project_info
 
-def update_project_name(project, new_name):
+def update_project_name(project, new_name, person_name):
     """更新项目名称"""
     config_file = Path(project['path']) / "config.conf"
     config = configparser.ConfigParser()
     config.read(config_file, encoding="utf-8")
     config["info"]["name"] = f"'{new_name}'"
+    config["info"]["person_name"] = f"'{person_name}'"
     with open(config_file, "w", encoding="utf-8") as f:
         config.write(f)
     project['name'] = new_name
