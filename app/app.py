@@ -221,6 +221,7 @@ def main():
 
         project_info = st.session_state.current_project.copy()
         # print project info exclude transcribe
+        project_info['memo'] = project_info['memo'][:10]+'...'
         project_info['files'] = {i:v['name'] for i,v in project_info['files'].items()}
         print(project_info)
         project_page(st.session_state.current_project)
