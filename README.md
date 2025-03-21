@@ -79,6 +79,9 @@ if __name__ == "__main__":
 完成环境安装后，命令行运行： `jupyter lab --notebook-dir=.` 启动笔记   
 在跳出的浏览页面中打开 note/open_memo.ipynb 查看运行样例，解释并尝试自己运行代码，实验不同prompt对模型输出的影响
 
+### 4. 添加Streamlit应用
+项目位置 ./app
 
+[Streamlit应用说明](./app/readme.md)
 
-
+![openmemo.gif](openmemo.gif)
